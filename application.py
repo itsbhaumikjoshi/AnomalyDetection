@@ -2,9 +2,9 @@ import os
 from dotenv import load_dotenv
 
 from utils.accessEnv import accessEnv
-from utils.setupLogger import setupLogger
+from utils.logger import Logger
 
 # loading environment variables
 load_dotenv()
 
-logger = setupLogger(__name__, env=accessEnv("ENV"))
+logger = Logger(name=__name__, env='production').getLogger()
